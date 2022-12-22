@@ -5,7 +5,7 @@ import { ProductConsumer } from "../context";
 import propTypes from "prop-types";
 class Product extends Component {
   render() {
-    const { id, title, img, price, inCart } = this.props.product;
+    const { id, title, image, price, inCart } = this.props.product;
     return (
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
@@ -16,11 +16,11 @@ class Product extends Component {
                 onClick={() => value.handelDetail(id)}
               >
                 <Link to="./details">
-                  <img src={img} alt="product" className="card-img-top" />
+                  <img src={image} alt="product" className="card-img-top" />
                 </Link>
                 <button
                   className="cart-btn"
-                  disabled={inCart ? true : false}
+                  
                   onClick={() => {
                     value.addToCart(id);
                     value.openModal(id);
